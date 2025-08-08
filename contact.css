@@ -1,0 +1,137 @@
+/* Existing styles (unchanged) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #3e2c23, #1a0e00);
+  color: #f4e9d9;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.contact-container {
+  background: rgba(62, 44, 35, 0.8);
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow:
+    0 15px 40px rgba(30, 15, 0, 0.7),
+    inset 0 0 20px rgba(247, 200, 115, 0.4);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #f7c873, #d79a2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #f7c873aa;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #d4b45a;
+  margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #fffaf3;
+  font-size: 1rem;
+  color: #3e2c23;
+  box-shadow: 0 0 10px rgba(247, 200, 115, 0.3);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #f7c873;
+  color: #3e2c23;
+  padding: 14px 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px #f7c873aa;
+}
+
+.contact-form button:hover {
+  background-color: #ffd54f;
+  box-shadow: 0 0 30px #ffd54faa;
+}
+
+.contact-info {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #f7c873;
+}
+
+.contact-info a {
+  color: #f7c873;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 480px) {
+  body {
+    padding: 30px 15px;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .contact-container {
+    padding: 25px 20px;
+    border-radius: 15px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-form button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+}
