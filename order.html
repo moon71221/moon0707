@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Coffee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1>☕ Place Your Coffee Order</h1>
+    <p>We’ll brew it fresh, just for you</p>
+  </header>
+
+  <main class="order-container">
+    <form class="order-form" action="confirmation.html" method="GET">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="drink">Select Your Drink</label>
+        <select id="drink" name="drink" required>
+          <option value="">-- Choose a drink --</option>
+          <option value="Espresso">Espresso</option>
+          <option value="Latte">Latte</option>
+          <option value="Cappuccino">Cappuccino</option>
+          <option value="Mocha">Mocha</option>
+          <option value="Karak">Karak</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="size">Size</label>
+        <select id="size" name="size" required>
+          <option value="">-- Choose a size --</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" />
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Special Notes</label>
+        <textarea id="notes" name="notes" placeholder="Add any custom request..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Place Order</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>📞 Contact us at: 71405679</p>
+    <p>© 2025 Coffee Shop. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

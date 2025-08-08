@@ -1,47 +1,57 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>من نحن</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Coffee Spot</title>
+<link rel="stylesheet" href="about.css">
+    <link href="https://fonts.coffeedark.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="logo">
-        <div class="g-icon">G</div>
-        <div class="logo-text">
-          موقع فخم
-          <span class="arabic-text">تصميم عصري</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Coffee Spot</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="overlay">
+            <h1>About Us</h1>
+            <p>Coffee brewed with passion and served with love ☕</p>
         </div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html">من نحن</a></li>
-        <li><a href="services.html">الخدمات</a></li>
-        <li><a href="contact.html">اتصل بنا</a></li>
-      </ul>
-    </div>
-  </nav>
+    </header>
 
-  <header>
-    من نحن – فريق شغوف بالإبداع والتقنية
-  </header>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-img" data-animate>
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee">
+            </div>
+            <div class="about-content" data-animate>
+                <h2>Our Story</h2>
+                <p>
+                    Founded in 2020, Coffee Spot was born from a deep love for specialty coffee and a desire to create a space where people can relax, connect, and enjoy.
+                </p>
+                <p>
+                    We source the finest beans and roast them to perfection. Whether you're grabbing a quick espresso or staying for a slow latte, every cup is crafted with care.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>رسالتنا</h2>
-    <p>
-      نحن فريق مختص في تقديم حلول تصميم احترافية للمواقع الإلكترونية، نجمع بين الإبداع والبساطة لتقديم تجربة فريدة للمستخدم.
-    </p>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Coffee Spot. All rights reserved.</p>
+    </footer>
 
-    <h2 style="margin-top: 30px;">قيمنا</h2>
-    <ul class="features">
-      <li>الاحترافية والشفافية</li>
-      <li>التركيز على تجربة المستخدم</li>
-      <li>التطوير المستمر</li>
-    </ul>
-  </section>
-
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,218 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif, Arial, sans-serif;
+  background: linear-gradient(135deg, #3e2c23, #1a0e00);
+  color: #f4e9d9;
+  line-height: 1.6;
+  padding: 50px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header with glow and gold gradient */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  user-select: none;
+}
+
+.header h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #f7c873, #d79a2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 8px #f7c873aa,
+    0 0 15px #d79a2fbb,
+    0 0 20px #f7c873dd;
+  margin-bottom: 15px;
+  letter-spacing: 4px;
+}
+
+.header p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d4b45a;
+  text-shadow: 0 0 10px #cfa35baa;
+  font-style: italic;
+}
+
+/* Menu container with subtle glass effect */
+.menu-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  background: rgba(62, 44, 35, 0.6);
+  border-radius: 30px;
+  padding: 40px 30px;
+  box-shadow:
+    inset 0 0 30px rgba(247, 200, 115, 0.5),
+    0 25px 50px rgba(30, 15, 0, 0.7);
+  transition: box-shadow 0.5s ease;
+}
+
+.menu-container:hover {
+  box-shadow:
+    inset 0 0 50px rgba(247, 200, 115, 0.8),
+    0 30px 60px rgba(40, 20, 0, 0.9);
+}
+
+/* Each category card with deep shadows and highlights */
+.menu-category {
+  flex: 1 1 300px;
+  background: linear-gradient(145deg, #4d3a22, #6b4c28);
+  border-radius: 30px;
+  padding: 35px 30px;
+  box-shadow:
+    0 12px 25px rgba(0,0,0,0.8),
+    inset 0 -5px 15px #d79a2f44,
+    inset 0 5px 15px #f7c87333;
+  color: #f7c873;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(.22,.61,.36,1), box-shadow 0.35s ease;
+}
+
+.menu-category::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(247,200,115,0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.menu-category:hover::before {
+  opacity: 1;
+}
+
+.menu-category:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow:
+    0 18px 45px rgba(255, 223, 90, 0.85),
+    inset 0 -8px 20px #d79a2f66,
+    inset 0 8px 20px #f7c87355;
+  z-index: 10;
+}
+
+.menu-category h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-shadow:
+    0 0 6px #f7c873bb,
+    0 0 15px #d79a2fbb;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Menu list styling */
+.menu-category ul {
+  list-style: none;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-category ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #d79a2f44;
+  transition: background-color 0.3s ease;
+}
+
+.menu-category ul li:last-child {
+  border-bottom: none;
+}
+
+.menu-category ul li:hover {
+  background: rgba(247, 200, 115, 0.2);
+  border-radius: 15px;
+}
+
+.item-name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #fff4d1;
+  max-width: 40%;
+  text-shadow: 0 0 6px #d79a2fcc;
+}
+
+.item-desc {
+  font-style: italic;
+  font-size: 1rem;
+  color: #d4b45a;
+  flex: 1;
+  margin: 0 20px;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.item-price {
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: #f7c873;
+  min-width: 65px;
+  text-align: right;
+  text-shadow: 0 0 6px #f7c873cc;
+}
+
+/* Footer styling */
+.footer {
+  margin-top: 60px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #d4b45a;
+  user-select: none;
+  text-shadow: 0 0 8px #d79a2fbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  
+  .menu-category {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+/* ====== Glow on Click Animation ====== */
+.menu-category.clicked {
+  animation: glowFlash 0.8s ease-out;
+}
+
+@keyframes glowFlash {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 215, 100, 0);
+  }
+  50% {
+    box-shadow: 0 0 30px 12px rgba(255, 215, 100, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 215, 100, 0);
+  }
+}

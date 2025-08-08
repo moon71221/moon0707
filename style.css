@@ -1,0 +1,244 @@
+/* ========== Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #fffaf3;
+  color: #3e2c23; /* بني غامق هادي */
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgb(62 44 35 / 0.15);
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* ========== Navbar (optional snippet for consistency) ========== */
+.navbar {
+  background-color: #3e2c23;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ========== Content Section ========== */
+.content {
+  max-width: 500px;
+  flex: 1 1 400px;
+  color: #3e2c23;
+}
+
+.highlight-text {
+  color: #f7c873; /* أصفر ذهبي ناعم */
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #f7c873bb;
+}
+
+.main-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #5c3d2e;
+  text-shadow: 0 0 6px #cfa35baa;
+}
+
+.sub-heading {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #6e5a43;
+}
+
+/* ========== Buttons ========== */
+.buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  user-select: none;
+  box-shadow: 0 0 15px transparent;
+  border: none;
+}
+
+.btn-yellow {
+  background-color: #f7c873;
+  color: #3e2c23;
+  box-shadow: 0 0 15px #f7c873cc;
+}
+
+.btn-yellow:hover {
+  background-color: #ffd54f;
+  box-shadow: 0 0 25px #ffd54fcc;
+  color: #2c1a00;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #f7c873;
+  color: #f7c873;
+  box-shadow: 0 0 15px transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #f7c873;
+  color: #3e2c23;
+  box-shadow: 0 0 25px #f7c873cc;
+}
+
+/* ========== Image Container ========== */
+.image-container {
+  flex: 1 1 400px;
+  max-width: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgb(247 200 115 / 0.4);
+  transition: transform 0.4s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+.image-container img {
+  border-radius: 20px;
+  filter: drop-shadow(0 0 12px #f7c873aa);
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+/* ========== Responsive for Mobile ========== */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 20px 15px;
+    gap: 30px;
+    align-items: center; /* توسيط العناصر */
+  }
+
+  .content,
+  .image-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .highlight-text {
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+  }
+
+  .main-heading {
+    font-size: 2rem;
+  }
+
+  .sub-heading {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .buttons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  .image-container {
+    box-shadow: 0 10px 30px rgb(247 200 115 / 0.35);
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+
+  img {
+    border-radius: 15px;
+  }
+}
+
+/* Animate fade-in for about content */
+.animate-fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Hero text cool loading animation */
+.overlay .char {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toggle menu active state */
+.menu-toggle.active {
+  color: #f7c873;
+  transform: rotate(90deg);
+  transition: transform 0.4s ease, color 0.4s ease;
+}
